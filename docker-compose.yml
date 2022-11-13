@@ -24,6 +24,8 @@ services:
       - 33060:33060
     environment:
       MYSQL_ROOT_PASSWORD: bpf54600jf123
+    expose:
+      - '3306'
 
 networks:
   default:
