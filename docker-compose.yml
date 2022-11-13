@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  node:
+    image: node:18.12-alpine
+    container_name: capital_app
+    tty: true
+    stdin_open: true
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+
+  db:
+    image: mysql:8.0.21
+    container_name: capital_db
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: bpf54600jf123
+
+networks:
+  default:
+    name: capital_network
