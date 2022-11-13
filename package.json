@@ -1,0 +1,26 @@
+{
+  "name": "sistema_capital",
+  "version": "1.0.0",
+  "description": "sistema de gerenciamento de estoque e fluxo de vendas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "management",
+    "products",
+    "orders",
+    "sales"
+  ],
+  "author": "Felipe Matheus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
