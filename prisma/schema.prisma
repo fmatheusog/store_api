@@ -11,11 +11,9 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @db.VarChar(255)
-  username  String   @db.VarChar(255)
-  password  String   @db.VarChar(255)
-  admin     Boolean  @default(false)
+  id       Int     @id @default(autoincrement())
+  name     String  @db.VarChar(255)
+  username String  @db.VarChar(255)
+  password String  @db.VarChar(255)
+  admin    Boolean @default(false)
 }
