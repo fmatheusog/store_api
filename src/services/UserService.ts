@@ -16,8 +16,8 @@ export default class UserService {
     return this.userRepository.create(data);
   }
 
-  public async update(data: User) {
-    return this.userRepository.updateById(data);
+  public async update(id: number, data: User) {
+    return this.userRepository.updateById(id, data);
   }
 
   public async delete(id: number) {

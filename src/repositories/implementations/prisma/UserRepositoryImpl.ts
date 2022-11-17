@@ -32,7 +32,7 @@ export default class UserRepositoryImpl implements UserRepository {
 
     return newUser as User;
   }
-  async updateById(entity: User): Promise<boolean> {
+  async updateById(id: number, entity: User): Promise<boolean> {
     await this.prisma.user.update({
       data: {
         name: entity.name,
@@ -41,7 +41,7 @@ export default class UserRepositoryImpl implements UserRepository {
         admin: entity.admin,
       },
       where: {
-        id: entity.id
+        id: id
       }
     })
 
