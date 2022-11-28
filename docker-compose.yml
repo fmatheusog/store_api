@@ -1,9 +1,22 @@
 version: "3"
 
 services:
+  db:
+    image: mysql:8.0.21
+    container_name: database_container
+    hostname: mysql_db
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: bpf54600jf123
+    expose:
+      - '3306'
+
   node:
     image: node:18.12-alpine
-    container_name: capital_app
+    container_name: app_container
     tty: true
     stdin_open: true
     restart: always
@@ -14,19 +27,10 @@ services:
       - db
     ports:
       - 3000:3000
-
-  db:
-    image: mysql:8.0.21
-    container_name: capital_db
-    restart: always
-    ports:
-      - 3306:3306
-      - 33060:33060
     environment:
-      MYSQL_ROOT_PASSWORD: bpf54600jf123
-    expose:
-      - '3306'
+      - APP_PORT=3000
+      - DATABASE_URL=mysql://root:bpf54600jf123@mysql_db:3306/test_db
 
 networks:
   default:
-    name: capital_network
+    name: default_net
