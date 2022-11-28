@@ -3,7 +3,11 @@ import User from "../../../entities/User";
 import UserRepository from "../../UserRepository.interface";
 
 export default class UserRepositoryImpl implements UserRepository {
-  private prisma = new PrismaClient();
+  private prisma: PrismaClient;
+
+  constructor() {
+    this.prisma = new PrismaClient();
+  }
 
   async findAll(): Promise<User[]> {
     const users = await this.prisma.user.findMany();
