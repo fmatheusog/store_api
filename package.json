@@ -1,6 +1,9 @@
 {
   "name": "sistema_capital",
   "version": "1.0.0",
+  "prisma": {
+    "seed": "ts-node src/seeds/seed.ts"
+  },
   "description": "sistema de gerenciamento de estoque e fluxo de vendas",
   "main": "index.js",
   "scripts": {
